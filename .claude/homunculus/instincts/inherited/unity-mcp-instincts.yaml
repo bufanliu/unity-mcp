@@ -1,0 +1,666 @@
+# Instincts generated from https://github.com/bufanliu/unity-mcp
+# Generated: 2026-02-27T01:14:49.158Z
+# Version: 2.0
+
+---
+id: unity-mcp-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 62 chars
+- Based on 200 commits
+
+---
+id: unity-mcp-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: unity-mcp-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: unity-mcp-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: unity-mcp-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: unity-mcp-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: **/*.test.*
+
+---
+id: unity-mcp-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*
+
+---
+id: unity-mcp-workflow-beta-version-release
+trigger: "when doing beta version release"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Beta Version Release
+
+## Action
+
+Follow the beta-version-release workflow:
+1. Update version in package.json
+2. Create pull request for beta version
+3. Merge pull request
+4. Repeat for next beta increment
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: MCPForUnity/package.json
+
+---
+id: unity-mcp-workflow-client-configurator-addition
+trigger: "when doing client configurator addition"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Client Configurator Addition
+
+## Action
+
+Follow the client-configurator-addition workflow:
+1. Create new configurator .cs file in MCPForUnity/Editor/Clients/Configurators/
+2. Generate corresponding .cs.meta file
+3. Update README.md documentation
+4. Update docs/i18n/README-zh.md for Chinese documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: MCPForUnity/Editor/Clients/Configurators/*.cs, MCPForUnity/Editor/Clients/Configurators/*.cs.meta, README.md
+
+---
+id: unity-mcp-workflow-major-feature-development
+trigger: "when doing major feature development"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Major Feature Development
+
+## Action
+
+Follow the major-feature-development workflow:
+1. Implement feature in MCPForUnity/Editor/Tools/
+2. Create corresponding Python service in Server/src/services/tools/
+3. Add integration tests in Server/tests/integration/
+4. Add Unity edit-mode tests in TestProjects/UnityMCPTests/Assets/Tests/EditMode/
+5. Update skill documentation in .claude/skills/ and unity-mcp-skill/
+6. Update README.md and other documentation
+7. Update Server/uv.lock dependencies
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: MCPForUnity/Editor/Tools/*.cs, Server/src/services/tools/*.py, Server/tests/integration/test_*.py
+
+---
+id: unity-mcp-workflow-version-sync-and-release
+trigger: "when doing version sync and release"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Version Sync And Release
+
+## Action
+
+Follow the version-sync-and-release workflow:
+1. Bump version numbers in package.json, pyproject.toml, manifest.json
+2. Sync from main branch into beta
+3. Create release pull request
+4. Merge and set next beta version
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: MCPForUnity/package.json, Server/pyproject.toml, manifest.json
+
+---
+id: unity-mcp-workflow-bug-fix-with-tests
+trigger: "when doing bug fix with tests"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/unity-mcp
+---
+
+# Unity Mcp Workflow Bug Fix With Tests
+
+## Action
+
+Follow the bug-fix-with-tests workflow:
+1. Fix implementation in relevant C# or Python files
+2. Add or update tests to verify fix
+3. Update integration tests if needed
+4. Create pull request with fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: MCPForUnity/Editor/**/*.cs, Server/src/**/*.py, TestProjects/UnityMCPTests/Assets/Tests/**/*.cs
+
+---
+id: unity-mcp-file-naming-pascal
+trigger: "When creating new .cs files in Unity project"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp File Naming Pascal
+
+## Action
+
+Use PascalCase for file names (e.g., PortManager.cs, StdioBridgeHost.cs)
+
+## Evidence
+
+- MCPForUnity/Editor/Helpers/PortManager.cs
+- MCPForUnity/Editor/Services/StdioBridgeReloadHandler.cs
+- MCPForUnity/Editor/Services/Transport/Transports/StdioBridgeHost.cs
+
+---
+id: unity-mcp-class-naming-pascal
+trigger: "When defining classes in C# files"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Class Naming Pascal
+
+## Action
+
+Use PascalCase for class names following Unity conventions
+
+## Evidence
+
+- Pattern seen in PortManager, StdioBridgeReloadHandler, StdioBridgeHost classes
+
+---
+id: unity-mcp-function-naming-camel
+trigger: "When defining methods in C# or Python files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Function Naming Camel
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Mixed language codebase with camelCase function pattern
+
+---
+id: unity-mcp-constants-screaming-snake
+trigger: "When defining constants in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Constants Screaming Snake
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Standard Python/C# convention observed in codebase
+
+---
+id: unity-mcp-test-file-location
+trigger: "When creating Unity tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Test File Location
+
+## Action
+
+Place test files in TestProjects/UnityMCPTests/Assets/Tests/EditMode/ directory
+
+## Evidence
+
+- TestProjects/UnityMCPTests/Assets/Tests/EditMode/Services/PortManagerTests.cs
+
+---
+id: unity-mcp-test-naming-convention
+trigger: "When creating test files"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Test Naming Convention
+
+## Action
+
+Name test files with 'Tests' suffix (e.g., PortManagerTests.cs)
+
+## Evidence
+
+- PortManagerTests.cs
+- PackageUpdateServiceTests
+
+---
+id: unity-mcp-meta-file-generation
+trigger: "When adding new .cs files in Unity project"
+confidence: 0.95
+domain: architecture
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Meta File Generation
+
+## Action
+
+Generate corresponding .cs.meta files for Unity asset management
+
+## Evidence
+
+- TestProjects/UnityMCPTests/Assets/Tests/EditMode/Services/PortManagerTests.cs.meta
+
+---
+id: unity-mcp-commit-prefix-chore
+trigger: "When updating package versions or dependencies"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Commit Prefix Chore
+
+## Action
+
+Use 'chore:' prefix for maintenance commits
+
+## Evidence
+
+- chore: update Unity package to beta version 9.4.8-beta.7
+- chore: update Unity package to beta version 9.4.8-beta.6
+
+---
+id: unity-mcp-commit-prefix-feat
+trigger: "When adding new features or functionality"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Commit Prefix Feat
+
+## Action
+
+Use 'feat:' prefix for feature commits
+
+## Evidence
+
+- feat: Add Qwen Code client configurator (#835)
+
+---
+id: unity-mcp-commit-prefix-fix
+trigger: "When fixing bugs or issues"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Commit Prefix Fix
+
+## Action
+
+Use 'fix:' prefix for bug fix commits
+
+## Evidence
+
+- fix: add pyenv shims to PATH on macOS (#813)
+
+---
+id: unity-mcp-commit-prefix-test
+trigger: "When fixing or updating test files"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Commit Prefix Test
+
+## Action
+
+Use 'test:' prefix for test-related commits
+
+## Evidence
+
+- test: fix PackageUpdateServiceTests override signature (#715)
+
+---
+id: unity-mcp-commit-length-62
+trigger: "When writing commit messages"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Commit Length 62
+
+## Action
+
+Keep commit messages around 62 characters on average
+
+## Evidence
+
+- Average commit length of 62 characters observed across repository
+
+---
+id: unity-mcp-beta-version-workflow
+trigger: "When preparing a new beta release"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Beta Version Workflow
+
+## Action
+
+Update version in MCPForUnity/package.json and create automated PR
+
+## Evidence
+
+- 15 beta release commits
+- chore: update Unity package to beta version pattern
+
+---
+id: unity-mcp-client-configurator-workflow
+trigger: "When integrating a new AI client service"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Client Configurator Workflow
+
+## Action
+
+Create configurator in MCPForUnity/Editor/Clients/Configurators/ and update both README files
+
+## Evidence
+
+- feat: Add Qwen Code client configurator (#835)
+- Fix constructor name for GeminiCliConfigurator (#833)
+
+---
+id: unity-mcp-feature-test-pattern
+trigger: "When implementing new features"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Feature Test Pattern
+
+## Action
+
+Create both Unity edit-mode tests and Python integration tests
+
+## Evidence
+
+- Major feature development pattern includes TestProjects/UnityMCPTests/Assets/Tests/EditMode/ and Server/tests/integration/
+
+---
+id: unity-mcp-version-sync-pattern
+trigger: "When releasing stable version from main to beta"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Version Sync Pattern
+
+## Action
+
+Update version numbers in package.json, pyproject.toml, and manifest.json simultaneously
+
+## Evidence
+
+- Version sync workflow pattern affecting multiple config files
+
+---
+id: unity-mcp-bug-fix-test-pattern
+trigger: "When fixing bugs or issues"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Bug Fix Test Pattern
+
+## Action
+
+Add or update tests to verify the fix works correctly
+
+## Evidence
+
+- Bug fix workflow includes test updates in both C# and Python test suites
+
+---
+id: unity-mcp-documentation-update-pattern
+trigger: "When adding new features or clients"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Documentation Update Pattern
+
+## Action
+
+Update both README.md and docs/i18n/README-zh.md for bilingual documentation
+
+## Evidence
+
+- Client configurator workflow includes updating both English and Chinese documentation
+
+---
+id: unity-mcp-skill-documentation-pattern
+trigger: "When implementing major features"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Skill Documentation Pattern
+
+## Action
+
+Update skill documentation in both .claude/skills/ and unity-mcp-skill/ directories
+
+## Evidence
+
+- Major feature development includes updating skill documentation in multiple locations
+
+---
+id: unity-mcp-dependency-lock-update
+trigger: "When implementing major features with Python dependencies"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/unity-mcp
+---
+
+# Unity Mcp Dependency Lock Update
+
+## Action
+
+Update Server/uv.lock file to reflect new dependencies
+
+## Evidence
+
+- Major feature development pattern includes Server/uv.lock updates
+
